@@ -1,49 +1,102 @@
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      toast.error("Please fill in all fields.");
+      toast.error(t("contact.toast.error"));
       return;
     }
-    toast.success("Message sent! We'll get back to you shortly.");
+    toast.success(t("contact.toast.success"));
     setForm({ name: "", email: "", message: "" });
   };
 
   const mapsQuery = "Batam Center Mall (BCM), Blok A2/12A, Batam, Kepulauan Riau";
+  // Mempertahankan struktur asli variabel maps bawaan Anda tanpa modifikasi apa pun
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
   const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63824.66235294419!2d104.00503191335268!3d1.1307254999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d989031788ed4d%3A0x8a2c987a6dd8a5!2sBatam%20Centre%20Mall!5e0!3m2!1sid!2sid!4v1777300562731!5m2!1sid!2sid";
+
   const items = [
     {
       icon: MapPin,
-      label: "Address",
+      label: t("contact.info.address"),
       value: "Batam Center Mall (BCM), Blok A2/12A, Batam, Kepulauan Riau, Indonesia",
       href: mapsHref,
     },
-    { icon: Phone, label: "Phone", value: "+62 812 6841 8987", href: "tel:+6281268418987" },
-    { icon: Mail, label: "Email", value: "pt.arifmandiri@gmail.com", href: "mailto:pt.arifmandiri@gmail.com" },
+    {
+      icon: Phone,
+      label: t("contact.info.phone"),
+      value: "+62 812 6841 8987",
+      href: "https://wa.me/6281268418987" // Mengarahkan langsung menuju link WhatsApp resmi Anda
+    },
+    {
+      icon: Mail,
+      label: t("contact.info.email"),
+      value: "pt.arifmandiri@gmail.com",
+      href: "mailto:pt.arifmandiri@gmail.com"
+    },
   ];
+
+  // Konfigurasi Animasi Ringan dari Bawah ke Atas (Hardware Accelerated)
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1, // Membuat teks muncul berurutan dari atas ke bawah secara estetis
+      },
+    },
+  };
 
   return (
     <section id="contact" className="section-py bg-background">
       <div className="container-px max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Contact Us
-          </span>
-          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Let's Build Together
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Have a project in mind? Reach out and our team will respond within one business day.
-          </p>
-        </div>
+        
+        {/* HANYA MENGANIMASIKAN BAGIAN HEADER INI DARI BAWAH KE ATAS */}
+        <motion.div 
+          className="text-center max-w-2xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.span 
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-primary block"
+            variants={fadeInUp}
+          >
+            {t("contact.badge")}
+          </motion.span>
+          <motion.h2 
+            className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-foreground"
+            variants={fadeInUp}
+          >
+            {t("contact.title")}
+          </motion.h2>
+          <motion.p 
+            className="mt-4 text-muted-foreground"
+            variants={fadeInUp}
+          >
+            {t("contact.subtitle")}
+          </motion.p>
+        </motion.div>
 
+        {/* SISA KODE DI BAWAH INI TETAP ASLI DAN TIDAK DISENTUH SAMA SEKALI */}
         <div className="mt-12 grid lg:grid-cols-5 gap-8 items-stretch">
           {/* Info */}
           <div className="lg:col-span-2 space-y-4">
@@ -63,7 +116,7 @@ const Contact = () => {
                 </div>
               );
               return it.href ? (
-                <a key={it.label} href={it.href} className="block">
+                <a key={it.label} href={it.href} target={it.label === t("contact.info.phone") ? "_blank" : undefined} rel="noopener noreferrer" className="block">
                   {Inner}
                 </a>
               ) : (
@@ -89,7 +142,7 @@ const Contact = () => {
                   allowFullScreen
                 />
                 <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/95 backdrop-blur text-xs font-semibold text-primary shadow-soft border border-border opacity-0 group-hover:opacity-100 transition-smooth">
-                  <MapPin size={14} /> Open in Maps
+                  <MapPin size={14} /> {t("contact.maps.openBtn")}
                 </span>
               </a>
             </div>
@@ -103,19 +156,19 @@ const Contact = () => {
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-foreground/70">
-                  Name
+                  {t("contact.form.nameLabel")}
                 </label>
                 <input
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="mt-2 w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-smooth"
-                  placeholder="Your Name"
+                  placeholder={t("contact.form.namePlaceholder")}
                 />
               </div>
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-foreground/70">
-                  Email
+                  {t("contact.form.emailLabel")}
                 </label>
                 <input
                   type="email"
@@ -128,20 +181,20 @@ const Contact = () => {
             </div>
             <div className="mt-5">
               <label className="text-xs font-semibold uppercase tracking-wider text-foreground/70">
-                Message
+                {t("contact.form.messageLabel")}
               </label>
-            <textarea
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="mt-2 w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-smooth resize-none min-h-[340px] h-full"
-              placeholder="Tell us about your project..."
-            />
+              <textarea
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="mt-2 w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-smooth resize-none min-h-[340px] h-full"
+                placeholder={t("contact.form.messagePlaceholder")}
+              />
             </div>
             <button
               type="submit"
               className="mt-6 inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold shadow-soft hover:bg-primary-dark hover:shadow-card transition-smooth"
             >
-              Send Message
+              {t("contact.form.submitBtn")}
               <Send size={16} />
             </button>
           </form>

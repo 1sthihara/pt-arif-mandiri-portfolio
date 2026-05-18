@@ -1,0 +1,183 @@
+{
+  "navbar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "projects": "Proyek",
+    "clients": "Klien",
+    "contact": "Kontak",
+    "getInTouch": "Hubungi Kami",
+    "generalContractor": "KONTRAKTOR UMUM"
+  },
+  "hero": {
+    "title": "Mitra Infrastruktur Telekomunikasi Terpercaya",
+    "subtitle": "Menyediakan solusi infrastruktur jaringan dan fiber optik berkualitas tinggi di seluruh Batam, dengan komitmen kuat terhadap presisi, keandalan, dan keunggulan teknik. Kami berkomitmen untuk membangun kemitraan jangka panjang dengan memastikan setiap proyek dieksekusi dengan akurasi, efisiensi, dan standar industri tertinggi.",
+    "getInTouch": "Hubungi Kami",
+    "viewProjects": "Lihat Proyek Kami",
+    "stats": {
+      "experience": "Tahun Pengalaman",
+      "projects": "Proyek Selesai",
+      "clients": "Klien Terpercaya"
+    }
+  },
+  "about": {
+    "badge": "Tentang Kami",
+    "title": "Membangun Tulang Punggung Konektivitas Modern",
+    "description": "PT. ARIF MANDIRI adalah kontraktor umum terpercaya yang berspesialisasi dalam infrastruktur telekomunikasi, instalasi fiber optik, dan solusi jaringan. Didirikan pada tahun 2019 dan berkantor pusat di Batam, kami bermitra dengan perusahaan telekomunikasi dan infrastruktur terkemuka untuk menghadirkan jaringan yang andal dan siap masa depan.",
+    "features": {
+      "f1": "Spesialisasi dalam infrastruktur fiber optik & telekomunikasi",
+      "f2": "Tim teknik dan operasi lapangan yang terampil",
+      "f3": "Penyampaian terbukti untuk klien perusahaan & pemerintah",
+      "f4": "Menyediakan layanan yang andal di seluruh Batam"
+    },
+    "stats": {
+      "founded": "Didirikan di Batam",
+      "commitment": "Komitmen proyek",
+      "support": "Dukungan pemeliharaan",
+      "focused": "Fokus pada Perusahaan"
+    }
+  },
+  "director": {
+    "badge": "Pesan Direktur",
+    "title": "Sambutan dari Direktur Kami",
+    "p1": "Kami berkomitmen untuk memberikan keunggulan dalam setiap proyek. Tujuan kami adalah menyediakan solusi telekomunikasi berkualitas tinggi dan andal guna mendukung pertumbuhan infrastruktur jangka panjang di seluruh Batam.",
+    "quote": "Membangun koneksi yang kuat hari ini untuk masa depan yang lebih baik, lebih andal, dan lebih terhubung. Kami berkomitmen untuk memberikan solusi berkualitas yang memberdayakan pertumbuhan dan inovasi.",
+    "name": "Judi Harianto",
+    "role": "Direktur"
+  },
+  "legal": {
+    "badge": "Legalitas Perusahaan",
+    "title": "Sertifikasi & Dokumen Hukum",
+    "subtitle": "Memastikan kepatuhan, kredibilitas, dan standar operasional yang terpercaya. Kami membuka jalan bagi pertumbuhan berkelanjutan melalui integritas yang tak tergoyahkan.",
+    "viewBtn": "Pratinjau",
+    "items": {
+      "nib": "Nomor Induk Berusaha",
+      "akte": "Akte Legalitas Perusahaan",
+      "kemenhum": "Pengesahan Kemenkumham"
+    }
+  },
+  "foundation": {
+    "badge": "Fondasi Kami",
+    "title": "Visi, Misi & Tujuan",
+    "subtitle": "Prinsip-prinsip dasar yang menjadi panduan di setiap proyek yang kami lakukan.",
+    "vision": {
+      "title": "Visi",
+      "desc": "Mendukung pelanggan dan memenuhi kebutuhan mereka secara efektif."
+    },
+    "mission": {
+      "title": "Misi",
+      "desc": "Menjadi kompetitif, terpercaya, dan responsif."
+    },
+    "goal": {
+      "title": "Tujuan",
+      "desc": "Menyelesaikan proyek tepat waktu dan memastikan kepuasan pelanggan."
+    }
+  },
+  "services": {
+    "badge": "Apa yang Kami Lakukan",
+    "title": "Layanan Kami",
+    "subtitle": "Rangkaian lengkap layanan infrastruktur telekomunikasi dan jaringan yang disesuaikan untuk keandalan perusahaan.",
+    "items": {
+      "fo_install": {
+        "title": "Instalasi Fiber Optik",
+        "desc": "Pemasangan kabel fiber optik profesional untuk jaringan utama (backbone) berkecepatan tinggi dan jarak jauh."
+      },
+      "fo_maintenance": {
+        "title": "Pemeliharaan Fiber Optik",
+        "desc": "Layanan inspection, penyambungan (splicing), dan perbaikan berkelanjutan untuk menjaga jaringan Anda berjalan tanpa hambatan."
+      },
+      "cctv": {
+        "title": "Sistem CCTV",
+        "desc": "Desain dan instalasi pengawasan CCTV terintegrasi untuk kantor, lokasi proyek, dan fasilitas."
+      },
+      "pabx": {
+        "title": "Instalasi PABX",
+        "desc": "Sistem telepon PABX andal yang disesuaikan untuk bisnis dari setiap skala dan kompleksitas."
+      },
+      "lan": {
+        "title": "Jaringan LAN",
+        "desc": "Pengabelan terstruktur LAN dan konfigurasi untuk konektivitas kantor yang stabil dan aman."
+      },
+      "it_telecom": {
+        "title": "Infrastruktur IT & Telekomunikasi",
+        "desc": "Konsultasi, penerapan, dan dukungan infrastruktur IT dan telekomunikasi ujung-ke-ujung (end-to-end)."
+      }
+    }
+  },
+  "projects": {
+    "badge": "Portofolio",
+    "title": "Proyek Terpilih",
+    "subtitle": "Sekilas tentang pekerjaan terbaru yang diselesaikan untuk mitra perusahaan dan infrastruktur kami.",
+    "defaultDesc": "Diselesaikan dengan teknik presisi dan eksekusi tepat jadwal.",
+    "items": {
+      "p1": "Proyek Fiber Optic PGASCOM",
+      "p2": "Penyebaran Jaringan FO BPBATAM",
+      "p3": "Penarikan & Instalasi Kabel",
+      "p4": "Instalasi HDPE",
+      "p5": "Aktivitas Splicing FO",
+      "p6": "Instalasi CCTV DITPAM",
+      "p7": "Pekerjaan Sipil Area POLDA",
+      "p8": "Proyek Infrastruktur SOUTHLINK",
+      "p9": "Instalasi CCTV BPJS",
+      "p10": "Proyek Mendatang I",
+      "p11": "Proyek Mendatang II",
+      "p12": "Proyek Mendatang III"
+    }
+  },
+  "activities": {
+    "badge": "Cara Kami Bekerja",
+    "title": "Galeri Aktivitas",
+    "subtitle": "Tiga aktivitas lapangan utama yang mendasari setiap kesuksesan implementasi proyek.",
+    "items": {
+      "a1": {
+        "title": "Penarikan Kabel",
+        "desc": "Penarikan presisi kabel fiber optik dan tembaga melalui jalur pipa, parit, dan konduit."
+      },
+      "a2": {
+        "title": "Instalasi HDPE",
+        "desc": "Pekerjaan sipil dan instalasi pipa HDPE bawah tanah yang membentuk pondasi jalur jaringan."
+      },
+      "a3": {
+        "title": "Splicing Fiber Optik",
+        "desc": "Penyambungan peleburan (fusion splicing) dan terminasi ahli untuk memastikan koneksi rendah rugi daya dan tahan lama."
+      }
+    }
+  },
+  "clients": {
+    "badge": "Dipercaya Oleh",
+    "title": "Klien Berharga Kami",
+    "subtitle": "Bermitra dengan para pemimpin industri di sektor telekomunikasi, energi, dan pemerintah."
+  },
+  "contact": {
+    "badge": "Hubungi Kami",
+    "title": "Mari Membangun Bersama",
+    "subtitle": "Punya rencana proyek? Hubungi kami dan tim kami akan merespons dalam waktu satu hari kerja.",
+    "info": {
+      "address": "Alamat",
+      "phone": "Nomor Telepon",
+      "email": "Email"
+    },
+    "maps": {
+      "openBtn": "Buka di Peta"
+    },
+    "form": {
+      "nameLabel": "Nama",
+      "namePlaceholder": "Nama Anda",
+      "emailLabel": "Email",
+      "messageLabel": "Pesan",
+      "messagePlaceholder": "Ceritakan kepada kami tentang proyek Anda...",
+      "submitBtn": "Kirim Pesan"
+    },
+    "toast": {
+      "error": "Mohon isi semua kolom.",
+      "success": "Pesan terkirim! Kami akan segera menghubungi Anda."
+    }
+  },
+  "footer": {
+    "desc": "Kontraktor umum terpercaya untuk infrastruktur fiber optik, jaringan, dan IT di seluruh Batam. Menghadirkan solusi andal dengan presisi dan konsistensi.",
+    "links": "Tautan Cepat",
+    "connect": "Hubungi",
+    "rights": "Hak cipta dilindungi undang-undang.",
+    "tagline": "Dirancang untuk keandalan, dibangun untuk performa."
+  }
+}

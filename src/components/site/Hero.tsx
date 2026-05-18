@@ -1,6 +1,16 @@
 import { ArrowRight, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+// Mengubah struktur data stat agar dinamis sesuai bahasa aktif
+const statItems = [
+  { v: "5+", key: "experience" },
+  { v: "50+", key: "projects" },
+  { v: "20+", key: "clients" },
+];
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -40,20 +50,23 @@ const Hero = () => {
       <div className="container-px max-w-7xl mx-auto relative z-10 pt-24 pb-16">
         <div className="max-w-3xl animate-fade-in-up">
 
+          {/* JUDUL HERO */}
           <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05]">
-            Reliable Telecommunication Infrastructure Partner
+            {t("hero.title")}
           </h1>
 
+          {/* DESKRIPSI HERO */}
           <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
-            Delivering high-quality fiber optic and network infrastructure solutions across Batam, with a strong commitment to precision, reliability, and engineering excellence. We strive to build long-term partnerships by ensuring every project is executed with accuracy, efficiency, and the highest industry standards.
+            {t("hero.subtitle")}
           </p>
 
+          {/* TOMBOL AKSI */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-background text-primary font-semibold shadow-elevated hover:shadow-card hover:scale-[1.02] transition-smooth"
             >
-              Get in Touch
+              {t("hero.getInTouch", "Get in Touch")}
               <ArrowRight size={18} />
             </a>
             <a
@@ -61,20 +74,17 @@ const Hero = () => {
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-sm text-primary-foreground font-semibold border border-white/30 hover:bg-white/20 transition-smooth"
             >
               <Briefcase size={18} />
-              View Our Projects
+              {t("hero.viewProjects")}
             </a>
           </div>
 
+          {/* DATA STATISTIK */}
           <div className="mt-16 grid grid-cols-3 gap-6 md:gap-10 max-w-xl">
-            {[
-              { v: "5+", l: "Years Experience" },
-              { v: "50+", l: "Projects Delivered" },
-              { v: "20+", l: "Trusted Clients" },
-            ].map((s) => (
-              <div key={s.l}>
+            {statItems.map((s) => (
+              <div key={s.key}>
                 <div className="text-3xl md:text-4xl font-bold text-primary-foreground">{s.v}</div>
                 <div className="mt-1 text-xs md:text-sm text-primary-foreground/70 uppercase tracking-wider">
-                  {s.l}
+                  {t(`hero.stats.${s.key}`)}
                 </div>
               </div>
             ))}

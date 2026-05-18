@@ -1,71 +1,120 @@
 import { Cable, Wrench, Camera, PhoneCall, Network, Server } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const services = [
   {
     icon: Cable,
-    title: "Fiber Optic Installation",
-    desc: "Professional deployment of fiber optic cabling for high-speed, long-distance network backbones.",
+    key: "fo_install",
   },
   {
     icon: Wrench,
-    title: "Fiber Optic Maintenance",
-    desc: "Ongoing inspection, splicing, and repair services to keep your network running flawlessly.",
+    key: "fo_maintenance",
   },
   {
     icon: Camera,
-    title: "CCTV Systems",
-    desc: "Design and installation of integrated CCTV surveillance for offices, sites, and facilities.",
+    key: "cctv",
   },
   {
     icon: PhoneCall,
-    title: "PABX Installation",
-    desc: "Reliable PABX phone systems tailored for businesses of every scale and complexity.",
+    key: "pabx",
   },
   {
     icon: Network,
-    title: "LAN Networking",
-    desc: "Structured LAN cabling and configuration for stable, secure office connectivity.",
+    key: "lan",
   },
   {
     icon: Server,
-    title: "IT & Telecom Infrastructure",
-    desc: "End-to-end IT and telecommunication infrastructure consulting, deployment, and support.",
+    key: "it_telecom",
   },
 ];
 
-const Services = () => {
-  return (
-    <section id="services" className="section-py bg-background">
-      <div className="container-px max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            What We Do
-          </span>
-          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Our Services
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            A complete range of telecommunication and network infrastructure services tailored for enterprise reliability.
-          </p>
-        </div>
+// Konfigurasi Animasi Bersih, Ringan, dan Presisi
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.215, 0.61, 0.355, 1] },
+  },
+};
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08, // Jeda mikro antar kartu (sangat mulus di mata)
+    },
+  },
+};
+
+const Services = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="services" className="section-py bg-background overflow-hidden">
+      <div className="container-px max-w-7xl mx-auto">
+        {/* Header Section */}
+        <motion.div 
+          className="text-center max-w-2xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={staggerContainer}
+        >
+          <motion.span 
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-primary block"
+            variants={fadeInUp}
+          >
+            {t("services.badge")}
+          </motion.span>
+          <motion.h2 
+            className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-foreground"
+            variants={fadeInUp}
+          >
+            {t("services.title")}
+          </motion.h2>
+          <motion.p 
+            className="mt-4 text-muted-foreground"
+            variants={fadeInUp}
+          >
+            {t("services.subtitle")}
+          </motion.p>
+        </motion.div>
+
+        {/* Grid Cards Section */}
+        <motion.div 
+          className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={staggerContainer}
+        >
           {services.map((s) => {
             const Icon = s.icon;
             return (
-              <div
-                key={s.title}
+              <motion.div
+                key={s.key}
+                variants={fadeInUp}
                 className="group bg-card rounded-2xl p-8 border border-border shadow-soft hover:shadow-card hover:border-primary/30 hover:-translate-y-1 transition-smooth"
               >
+                {/* Icon Wrapper */}
                 <div className="w-14 h-14 rounded-xl bg-primary-soft flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-smooth">
                   <Icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-smooth" />
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-foreground">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
+                
+                {/* Dynamic Translation Content */}
+                <h3 className="mt-6 text-xl font-bold text-foreground">
+                  {t(`services.items.${s.key}.title`)}
+                </h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  {t(`services.items.${s.key}.desc`)}
+                </p>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

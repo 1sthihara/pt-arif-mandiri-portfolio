@@ -1,0 +1,183 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "clients": "Clients",
+    "contact": "Contact",
+    "getInTouch": "Get in Touch",
+    "generalContractor": "GENERAL CONTRACTOR"
+  },
+  "hero": {
+    "title": "Reliable Telecommunication Infrastructure Partner",
+    "subtitle": "Delivering high-quality fiber optic and network infrastructure solutions across Batam, with a strong commitment to precision, reliability, and engineering excellence. We strive to build long-term partnerships by ensuring every project is executed with accuracy, efficiency, and the highest industry standards.",
+    "getInTouch": "Get in Touch",
+    "viewProjects": "View Our Projects",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Delivered",
+      "clients": "Trusted Clients"
+    }
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Building the Backbone of Modern Connectivity",
+    "description": "PT. ARIF MANDIRI is a trusted general contractor specializing in telecommunication infrastructure, fiber optic installation, and network solutions. Established in 2019 and headquartered in Batam, we partner with leading telecom and infrastructure companies to deliver reliable, future-ready networks.",
+    "features": {
+      "f1": "Specialized in fiber optic & telecom infrastructure",
+      "f2": "Skilled engineering and field operation teams",
+      "f3": "Proven delivery for enterprise & government clients",
+      "f4": "Providing reliable services throughout Batam"
+    },
+    "stats": {
+      "founded": "Founded in Batam",
+      "commitment": "Project commitment",
+      "support": "Maintenance support",
+      "focused": "Enterprise focused"
+    }
+  },
+  "director": {
+    "badge": "Director's Message",
+    "title": "A Message From Our Director",
+    "p1": "We are committed to delivering excellence in every project. Our goal is to provide high-quality and reliable telecommunication solutions to support long-term infrastructure growth across Batam.",
+    "quote": "Building strong connections today for a better, more reliable, and more connected tomorrow. We are dedicated to providing quality solutions that empower growth and innovation.",
+    "name": "Judi Harianto",
+    "role": "Director"
+  },
+  "legal": {
+    "badge": "Company Legality",
+    "title": "Certifications & Legal Documents",
+    "subtitle": "Ensuring compliance, credibility, and trusted operational standards. We pave the way for sustainable growth through unwavering integrity.",
+    "viewBtn": "View",
+    "items": {
+      "nib": "Business Identification Number",
+      "akte": "Company Legal Act",
+      "kemenhum": "Kemenkumham Approval"
+    }
+  },
+  "foundation": {
+    "badge": "Our Foundation",
+    "title": "Vision, Mission & Goal",
+    "subtitle": "The core principles that guide us through every project we undertake.",
+    "vision": {
+      "title": "Vision",
+      "desc": "To support customers and meet their needs effectively."
+    },
+    "mission": {
+      "title": "Mission",
+      "desc": "To be competitive, reliable, and responsive."
+    },
+    "goal": {
+      "title": "Goal",
+      "desc": "To complete projects on time and ensure customer satisfaction."
+    }
+  },
+  "services": {
+    "badge": "What We Do",
+    "title": "Our Services",
+    "subtitle": "A comprehensive range of telecommunication and network infrastructure services tailored for corporate reliability.",
+    "items": {
+      "fo_install": {
+        "title": "Fiber Optic Installation",
+        "desc": "Professional deployment of fiber optic cables for high-speed, long-distance backbone networks."
+      },
+      "fo_maintenance": {
+        "title": "Fiber Optic Maintenance",
+        "desc": "Ongoing inspection, fusion splicing, and repair services to keep your network running without interruption."
+      },
+      "cctv": {
+        "title": "CCTV Systems",
+        "desc": "Integrated CCTV surveillance design and installation for offices, project sites, and facilities."
+      },
+      "pabx": {
+        "title": "PABX Installation",
+        "desc": "Reliable PABX telephone systems customized for businesses of any scale and complexity."
+      },
+      "lan": {
+        "title": "LAN Networking",
+        "desc": "Structured LAN cabling and configuration for stable, secure office connectivity."
+      },
+      "it_telecom": {
+        "title": "IT & Telecom Infrastructure",
+        "desc": "End-to-end consulting, deployment, and support for IT and telecommunication infrastructure."
+      }
+    }
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Selected Projects",
+    "subtitle": "A glimpse of recent work completed for our corporate and infrastructure partners.",
+    "defaultDesc": "Completed with precision engineering and on-schedule execution.",
+    "items": {
+      "p1": "PGASCOM Fiber Optic Project",
+      "p2": "BPBATAM FO Network Deployment",
+      "p3": "Cable Pulling & Installation",
+      "p4": "HDPE Installation",
+      "p5": "FO Splicing Activity",
+      "p6": "DITPAM CCTV Installation",
+      "p7": "POLDA Area Civil Works",
+      "p8": "SOUTHLINK Infrastructure Project",
+      "p9": "BPJS CCTV Installation",
+      "p10": "Upcoming Project I",
+      "p11": "Upcoming Project II",
+      "p12": "Upcoming Project III"
+    }
+  },
+  "activities": {
+    "badge": "How We Work",
+    "title": "Activity Gallery",
+    "subtitle": "Three key field activities that drive the successful implementation of our projects.",
+    "items": {
+      "a1": {
+        "title": "Cable Pulling",
+        "desc": "Precision pulling of fiber optic and copper cables through pipes, trenches, and conduits."
+      },
+      "a2": {
+        "title": "HDPE Installation",
+        "desc": "Civil works and underground HDPE pipe installation forming the foundation of network pathways."
+      },
+      "a3": {
+        "title": "Fiber Optic Splicing",
+        "desc": "Expert fusion splicing and termination ensuring low-loss, durable network connections."
+      }
+    }
+  },
+  "clients": {
+    "badge": "Trusted By",
+    "title": "Our Valued Clients",
+    "subtitle": "Partnering with industry leaders across telecommunications, energy, and government sectors."
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Let's Build Together",
+    "subtitle": "Have a project in mind? Reach out and our team will respond within one business day.",
+    "info": {
+      "address": "Address",
+      "phone": "Phone Number",
+      "email": "Email"
+    },
+    "maps": {
+      "openBtn": "Open in Maps"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submitBtn": "Send Message"
+    },
+    "toast": {
+      "error": "Please fill in all fields.",
+      "success": "Message sent! We'll get back to you shortly."
+    }
+  },
+  "footer": {
+    "desc": "A trusted general contractor for fiber optic, networking, and IT infrastructure across Batam. Delivering reliable solutions with precision and consistency.",
+    "links": "Quick Links",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "tagline": "Engineered for reliability, built for performance."
+  }
+}
