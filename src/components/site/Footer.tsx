@@ -22,9 +22,12 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2">   
               <img 
-                src="/logo2.png" 
-                alt="Logo" 
+                src="/logo2.png" // CATATAN: Pastikan nama file ini sama persis dengan file logo yang sukses tampil di Navbar kamu
+                alt="Logo PT. Arif Mandiri" 
+                width="40"
+                height="40"
                 className="h-10 w-auto object-contain"    
+                loading="lazy"
               />
               <div>
                 <div className="font-bold">PT. ARIF MANDIRI</div>
@@ -38,7 +41,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* TAUTAN CEPAT (Diubah dari h4 menjadi h3) */}
+          {/* TAUTAN CEPAT */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-background">
               {t("footer.links")}
@@ -57,7 +60,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* KONTAK & ALAMAT (Diubah dari h4 menjadi h3) */}
+          {/* KONTAK & ALAMAT */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-background">
               {t("footer.connect")}

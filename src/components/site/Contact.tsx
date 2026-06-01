@@ -18,7 +18,7 @@ const Contact = () => {
     setForm({ name: "", email: "", message: "" });
   };
 
-  const mapsQuery = "Batam Center Mall (BCM), Blok A2/12A, Batam, Kepulauan Riau";
+  const mapsQuery = "Balam Center Mall (BCM), Blok A2/12A, Batam, Kepulauan Riau";
   // Mempertahankan struktur asli variabel maps bawaan Anda tanpa modifikasi apa pun
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
   const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63824.66235294419!2d104.00503191335268!3d1.1307254999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d989031788ed4d%3A0x8a2c987a6dd8a5!2sBatam%20Centre%20Mall!5e0!3m2!1sid!2sid!4v1777300562731!5m2!1sid!2sid";
@@ -190,9 +190,10 @@ const Contact = () => {
                 placeholder={t("contact.form.messagePlaceholder")}
               />
             </div>
+            {/* PERBAIKAN AKTABILITAS KONTRAS WARNA UNTUK LIGHTHOUSE AUDIT */}
             <button
               type="submit"
-              className="mt-6 inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold shadow-soft hover:bg-primary-dark hover:shadow-card transition-smooth"
+              className="mt-6 inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white font-bold shadow-soft hover:bg-primary-dark hover:shadow-card transition-smooth"
             >
               {t("contact.form.submitBtn")}
               <Send size={16} />

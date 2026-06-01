@@ -270,10 +270,10 @@ const About = () => {
                       </div>
                       {/* Kontainer teks diberi flex-1 agar beradaptasi dengan kontainer induk */}
                       <div className="min-w-0 flex-1">
-                        {/* PERBAIKAN: Mengubah truncate menjadi break-words agar teks membungkus rapi ke bawah */}
-                        <h4 className="font-semibold text-foreground text-xs md:text-base break-words whitespace-normal leading-tight">
+                        {/* PERBAIKAN SEMANTIK: Mengubah h4 menjadi h3 demi standarisasi Google Lighthouse Accessibility */}
+                        <h3 className="font-semibold text-foreground text-xs md:text-base break-words whitespace-normal leading-tight">
                           {t(`legal.items.${doc.key}`)}
-                        </h4>
+                        </h3>
                         <p className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider font-medium mt-0.5">
                           {doc.type} Document
                         </p>
