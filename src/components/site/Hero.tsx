@@ -16,13 +16,15 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient"
     >
-
+      {/* BACKGROUND IMAGE OPTIMIZATION (Lighthouse Fix) */}
       <img
         src="/main.webp"
         alt=""
         role="presentation"
         fetchpriority="high"
         loading="eager"
+        width={1608} // Menentukan width asli gambar untuk mencegah layout shift
+        height={3264} // Menentukan height asli gambar untuk mencegah layout shift
         className="absolute inset-0 w-full h-full object-cover object-center opacity-15 mix-blend-overlay pointer-events-none"
       />
 
@@ -69,9 +71,10 @@ const Hero = () => {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            {/* BUTTON 1: FIX CONTRAST ACCESSIBILITY (Ubah ke bg-white text-slate-950 untuk kontras maksimal) */}
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-background text-primary font-semibold shadow-elevated hover:shadow-card hover:scale-[1.02] transition-smooth text-center"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-slate-950 font-bold shadow-elevated hover:bg-slate-100 hover:scale-[1.02] transition-smooth text-center"
             >
               {t("hero.getInTouch", "Get in Touch")}
               <ArrowRight size={18} />
@@ -85,7 +88,7 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* DATA STATISTIK (Koreksi Skala Grid Agar Teks Label Tidak Terhimpit Sempit) */}
+          {/* DATA STATISTIK */}
           <div className="mt-16 grid grid-cols-3 gap-4 sm:gap-6 md:gap-10 max-w-xl">
             {statItems.map((s) => (
               <div key={s.key} className="flex flex-col">

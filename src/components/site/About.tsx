@@ -261,14 +261,17 @@ const About = () => {
                   <motion.div
                     key={doc.key}
                     variants={fadeInUp}
-                    className="group flex items-center justify-between p-3.5 md:p-4 bg-card rounded-xl border border-border shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300"
+                    className="group flex items-center justify-between p-3.5 md:p-4 bg-card rounded-xl border border-border shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 w-full gap-3"
                   >
-                    <div className="flex items-center gap-3 md:gap-4 min-w-0">
+                    {/* Pembungkus Kiri diberi flex-1 agar menghabiskan sisa ruang secara dinamis */}
+                    <div className="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
                       <div className="p-2.5 md:p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary/20 transition-colors shrink-0">
                         <FileText className="w-5 h-5 md:w-6 md:h-6" />
                       </div>
-                      <div className="min-w-0">
-                        <h4 className="font-semibold text-foreground text-xs md:text-base truncate">
+                      {/* Kontainer teks diberi flex-1 agar beradaptasi dengan kontainer induk */}
+                      <div className="min-w-0 flex-1">
+                        {/* PERBAIKAN: Mengubah truncate menjadi break-words agar teks membungkus rapi ke bawah */}
+                        <h4 className="font-semibold text-foreground text-xs md:text-base break-words whitespace-normal leading-tight">
                           {t(`legal.items.${doc.key}`)}
                         </h4>
                         <p className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider font-medium mt-0.5">

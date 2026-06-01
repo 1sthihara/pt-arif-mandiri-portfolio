@@ -58,6 +58,8 @@ const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="PT Arif Mandiri Logo" 
+            width={189} // Ditambahkan untuk estimasi aspek rasio (Lighthouse Fix)
+            height={136} // Ditambahkan untuk estimasi aspek rasio (Lighthouse Fix)
             className="h-10 w-auto object-contain"
           />
           <div className="leading-tight">

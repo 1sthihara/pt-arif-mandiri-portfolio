@@ -5,9 +5,9 @@ const clients = [
   { name: "PGASCOM", logo: "/logos/pgascom.png" },
   { name: "BP BATAM", logo: "/logos/bpbatam.png" },
   { name: "BPJS", logo: "/logos/bpjs.png" },
-  { name: "GASNET", logo: "/logos/gasnet.png" },
+  { name: "GASNET", logo: "/logos/gasnet.webp" },
   { name: "INTEK", logo: "/logos/intek.png" },
-  { name: "POLRESBARELANG", logo: "/logos/polresbarelang.png" },
+  { name: "POLRESBARELANG", logo: "/logos/polresbarelang.webp" },
   { name: "BATAMINDO", logo: "/logos/batamindo.png" },
   { name: "BCIFT", logo: "/logos/bcift.png" },
 ];
@@ -84,6 +84,9 @@ const Clients = () => {
               <img
                 src={c.logo}
                 alt={c.name}
+                // Menambahkan atribut ukuran dasar untuk aspek rasio (Lighthouse Fix)
+                width={c.name === "POLRESBARELANG" ? 200 : 160}
+                height={c.name === "POLRESBARELANG" ? 80 : 56}
                 className={`
                   object-contain grayscale group-hover:grayscale-0 transition duration-300
                   ${c.name === "POLRESBARELANG"

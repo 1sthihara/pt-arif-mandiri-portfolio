@@ -38,11 +38,11 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* TAUTAN CEPAT */}
+          {/* TAUTAN CEPAT (Diubah dari h4 menjadi h3) */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-background">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-background">
               {t("footer.links")}
-            </h4>
+            </h3>
             <ul className="mt-5 grid grid-cols-2 gap-2">
               {links.map((l) => (
                 <li key={l.href}>
@@ -57,11 +57,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* KONTAK & ALAMAT */}
+          {/* KONTAK & ALAMAT (Diubah dari h4 menjadi h3) */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-background">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-background">
               {t("footer.connect")}
-            </h4>
+            </h3>
             <p className="mt-5 text-sm text-background/70 leading-relaxed mb-5">
               Batam Center Mall (BCM), Blok A2/12A, Batam, Kepulauan Riau, Indonesia
             </p>
