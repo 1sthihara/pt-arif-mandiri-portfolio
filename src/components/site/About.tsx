@@ -211,7 +211,7 @@ const About = () => {
               >
                 <div className="relative w-full max-w-sm lg:max-w-md flex flex-col items-center">
                   <img
-                    src="/director.png"
+                    src="/director.webp"
                     alt={t("director.name")}
                     className="w-full max-w-[280px] md:max-w-[340px] lg:max-w-[400px] h-auto object-contain"
                   />

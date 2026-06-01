@@ -16,6 +16,16 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient"
     >
+
+      <img
+        src="/main.webp"
+        alt=""
+        role="presentation"
+        fetchpriority="high"
+        loading="eager"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-15 mix-blend-overlay pointer-events-none"
+      />
+
       {/* Abstract tech grid background */}
       <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -29,11 +39,11 @@ const Hero = () => {
       </div>
 
       {/* Glowing orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-primary-dark/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-primary-dark/30 rounded-full blur-3xl pointer-events-none" />
 
       {/* Network lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1200 800" fill="none">
+      <svg className="absolute inset-0 w-full h-full opacity-30 pointer-events-none" viewBox="0 0 1200 800" fill="none">
         <line x1="100" y1="200" x2="400" y2="350" stroke="white" strokeWidth="1" />
         <line x1="400" y1="350" x2="700" y2="200" stroke="white" strokeWidth="1" />
         <line x1="700" y1="200" x2="1000" y2="400" stroke="white" strokeWidth="1" />
@@ -47,43 +57,42 @@ const Hero = () => {
         <circle cx="900" cy="650" r="4" fill="white" />
       </svg>
 
-      <div className="container-px max-w-7xl mx-auto relative z-10 pt-24 pb-16">
+      <div className="container-px max-w-7xl mx-auto relative z-10 pt-28 pb-20 md:pt-24 md:pb-16">
         <div className="max-w-3xl animate-fade-in-up">
 
-          {/* JUDUL HERO */}
-          <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05]">
+          <h1 className="mt-6 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] md:leading-[1.05] tracking-tight">
             {t("hero.title")}
           </h1>
 
-          {/* DESKRIPSI HERO */}
-          <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-base md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
             {t("hero.subtitle")}
           </p>
 
-          {/* TOMBOL AKSI */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-background text-primary font-semibold shadow-elevated hover:shadow-card hover:scale-[1.02] transition-smooth"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-background text-primary font-semibold shadow-elevated hover:shadow-card hover:scale-[1.02] transition-smooth text-center"
             >
               {t("hero.getInTouch", "Get in Touch")}
               <ArrowRight size={18} />
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-sm text-primary-foreground font-semibold border border-white/30 hover:bg-white/20 transition-smooth"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-sm text-primary-foreground font-semibold border border-white/30 hover:bg-white/20 transition-smooth text-center"
             >
               <Briefcase size={18} />
               {t("hero.viewProjects")}
             </a>
           </div>
 
-          {/* DATA STATISTIK */}
-          <div className="mt-16 grid grid-cols-3 gap-6 md:gap-10 max-w-xl">
+          {/* DATA STATISTIK (Koreksi Skala Grid Agar Teks Label Tidak Terhimpit Sempit) */}
+          <div className="mt-16 grid grid-cols-3 gap-4 sm:gap-6 md:gap-10 max-w-xl">
             {statItems.map((s) => (
-              <div key={s.key}>
-                <div className="text-3xl md:text-4xl font-bold text-primary-foreground">{s.v}</div>
-                <div className="mt-1 text-xs md:text-sm text-primary-foreground/70 uppercase tracking-wider">
+              <div key={s.key} className="flex flex-col">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-foreground tracking-tight">
+                  {s.v}
+                </div>
+                <div className="mt-1.5 text-[10px] sm:text-xs md:text-sm text-primary-foreground/70 uppercase tracking-wider font-medium leading-tight">
                   {t(`hero.stats.${s.key}`)}
                 </div>
               </div>
