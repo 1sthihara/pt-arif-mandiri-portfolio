@@ -146,7 +146,7 @@ const projects = [
   },
   {
     id: "p8",
-    tag: "Infrastructure",
+    tag: "Civil Works",
     images: [
       "/projects/southlink/1.webp",
       "/projects/southlink/2.webp",
@@ -211,13 +211,25 @@ const projects = [
   },
   {
     id: "p10",
-    tag: "Upcoming Project",
-    images: ["/projects/placeholder.webp"],
+    tag: "Maintenance",
+    images: [
+      "/projects/airnav/4.webp",
+      "/projects/airnav/1.webp",
+      "/projects/airnav/2.webp",
+      "/projects/airnav/3.webp",
+      "/projects/airnav/5.webp",
+      "/projects/airnav/6.webp",
+    ],
   },
   {
     id: "p11",
-    tag: "Upcoming Project",
-    images: ["/projects/placeholder.webp"],
+    tag: "Maintenance",
+    images: [
+      "/projects/mcdermott/1.webp",
+      "/projects/mcdermott/2.webp",
+      "/projects/mcdermott/3.webp",
+      "/projects/mcdermott/4.webp",
+    ],
   },
   {
     id: "p12",
@@ -246,7 +258,7 @@ const staggerContainer = {
 };
 
 const Projects = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [activeProject, setActiveProject] = useState<any>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -279,7 +291,6 @@ const Projects = () => {
         setCurrentIndex((prev) => prev + 1);
       }
 
-      // FIX LOGIKA: ArrowLeft harusnya dikurang 1 (prev - 1)
       if (e.key === "ArrowLeft" && currentIndex > 0) {
         setCurrentIndex((prev) => prev - 1);
       }
@@ -296,7 +307,30 @@ const Projects = () => {
   }, [activeProject, currentIndex]);
 
   return (
-    <section id="projects" className="section-py bg-secondary/40 overflow-hidden">
+    <section id="projects" className="section-py bg-secondary/40 overflow-hidden relative">
+      
+      {/* INJECT STYLING CUSTOM UNTUK DOTS SWIPER */}
+      <style>{`
+        .swiper-pagination {
+          position: relative !important;
+          bottom: 0 !important;
+          margin-top: 40px !important;
+        }
+        .swiper-pagination-bullet {
+          background: #94a3b8 !important;
+          opacity: 0.4 !important;
+          width: 8px !important;
+          height: 8px !important;
+          transition: all 0.3s ease-in-out;
+        }
+        .swiper-pagination-bullet-active {
+          background: #002B49 !important;
+          opacity: 1 !important;
+          width: 28px !important;
+          border-radius: 9999px !important;
+        }
+      `}</style>
+
       <div className="container-px max-w-7xl mx-auto">
         
         {/* HEADER */}
@@ -323,6 +357,7 @@ const Projects = () => {
         {/* SWIPER CONTAINER */}
         <div className="mt-14">
           <Swiper
+            key={i18n.language}
             modules={[Pagination, Autoplay]}
             slidesPerView={1}
             spaceBetween={50}
@@ -333,12 +368,10 @@ const Projects = () => {
             }}
             speed={800}
             loop={true}
-            lazy="true"
-            className="pb-14 overflow-hidden px-2"
+            className="pb-4 overflow-hidden px-2"
           >
             {projectSlides.map((slideItems, slideIndex) => (
               <SwiperSlide key={slideIndex}>
-                {/* GRID SYSTEM INSIDE SLIDE */}
                 <m.div 
                   className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
                   initial="hidden"
@@ -367,16 +400,16 @@ const Projects = () => {
 
                         {/* TAG */}
                         <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/80 backdrop-blur text-xs font-medium text-primary">
-                          {p.tag}
+                          {t(`projects.tags.${p.tag}`, p.tag)}
                         </span>
                       </div>
 
                       {/* TEXT */}
                       <div className="p-6">
-                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition">
+                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition line-clamp-1">
                           {t(`projects.items.${p.id}`)}
                         </h3>
-                        <p className="mt-2 text-sm text-muted-foreground">
+                        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
                           {t("projects.defaultDesc")}
                         </p>
                       </div>
@@ -389,7 +422,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* MODAL GALLERY WITH ANIMATEPRESENCE */}
+      {/* MODAL GALLERY */}
       <AnimatePresence>
         {activeProject && (
           <m.div 
@@ -399,8 +432,6 @@ const Projects = () => {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           >
-            
-            {/* CLOSE */}
             <button
               onClick={() => setActiveProject(null)}
               className="absolute top-5 right-5 text-white hover:opacity-70 transition z-50"
@@ -408,7 +439,6 @@ const Projects = () => {
               <X size={34} />
             </button>
 
-            {/* IMAGE CLICK HANDLER */}
             <div
               className="relative cursor-pointer"
               onClick={(e) => {
@@ -427,7 +457,6 @@ const Projects = () => {
                 }
               }}
             >
-              {/* FIX TYPO: Mengubah <main.img> menjadi <m.img> */}
               <m.img
                 key={currentIndex}
                 initial={{ opacity: 0, scale: 0.98 }}
@@ -439,11 +468,9 @@ const Projects = () => {
               />
             </div>
 
-            {/* COUNTER */}
             <div className="absolute bottom-6 text-white/80 text-sm font-medium tracking-wide bg-black/40 px-3 py-1 rounded-full backdrop-blur">
               {currentIndex + 1} / {activeProject.images.length}
             </div>
-
           </m.div>
         )}
       </AnimatePresence>

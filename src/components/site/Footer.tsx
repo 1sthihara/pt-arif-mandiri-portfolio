@@ -92,12 +92,12 @@ const Footer = () => {
 
               {/* Email & Alamat Email menggunakan Lucide Mail */}
               <a 
-                href="mailto:pt.arifmandiri@gmail.com" 
+                href="mailto:contact@arifmandiri.com" 
                 className="flex items-center gap-3 text-sm text-background/70 hover:text-primary transition-smooth group"
                 title="Email Us"
               >
                 <Mail className="w-[18px] h-[18px] shrink-0" />
-                <span className="font-medium">pt.arifmandiri@gmail.com</span>
+                <span className="font-medium">contact@arifmandiri.com</span>
               </a>
             </div>
           </div>
