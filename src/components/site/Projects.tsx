@@ -324,7 +324,7 @@ const Projects = () => {
           transition: all 0.3s ease-in-out;
         }
         .swiper-pagination-bullet-active {
-          background: #002B49 !important;
+          background: #0284c7 !important;
           opacity: 1 !important;
           width: 28px !important;
           border-radius: 9999px !important;
